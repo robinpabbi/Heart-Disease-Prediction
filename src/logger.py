@@ -4,12 +4,12 @@ from datetime import datetime
 
 LOG_FILE_NAME=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 #Joins the Current Working Directory, logs and log file name
-logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE_NAME);
+logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE_NAME)
 
 #Create a directory and if already exists then do nothing
 os.makedirs(logs_path, exist_ok=True)
 
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE_NAME);
+LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE_NAME)
 
 #Configuring the logger
 logging.basicConfig(
