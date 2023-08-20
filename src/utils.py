@@ -22,6 +22,16 @@ def save_object(file_path:str, obj_to_save):
         logging.error('Error occurred by saving file.')
         raise CustomException(ex, sys)
 
+
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            pickle.load(file_obj)
+    except Exception as ex:
+        logging.error(f'Error occurred while loading file {file_path}')
+        raise CustomException(ex, sys)
+    
+
 def evaluate_model(X_train, X_test, y_train, y_test, models:dict) -> dict:
     try:
         # Report dictionary
